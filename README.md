@@ -10,7 +10,7 @@
 - Implementing instance methods that interact with other instances and objects
 - Implementing inheritance
 - Overriding methods from superclasses and Object
-
+^___^
 ## Goal
 
 You want to organize a swap meet! You own a lot of things. So do your friends! It would be awesome if each person could swap one of their things with another person's things.
