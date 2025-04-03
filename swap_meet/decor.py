@@ -5,6 +5,7 @@ class Decor(Item):
         super().__init__(id, condition)
         self.width = width
         self.length = length
+        self.condition = condition
     
     def get_category(self):
         return self.__class__.__name__

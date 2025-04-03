@@ -4,6 +4,7 @@ class Clothing(Item):
     def __init__(self, id=None, fabric="Unknown", condition=0):
         super().__init__(id, condition)
         self.fabric = fabric
+        self.condition = condition
     
     def get_category(self):
         return self.__class__.__name__
