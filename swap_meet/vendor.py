@@ -1,4 +1,4 @@
-from .item import Item
+from swap_meet.item import Item
 
 class Vendor:
     def __init__(self,inventory=None):
@@ -49,7 +49,6 @@ class Vendor:
         self.inventory.append(their_first_item)
         return True
     
-
     def get_by_category(self, category=""):
         return [item for item in self.inventory if item.get_category() == category] 
 
@@ -63,7 +62,6 @@ class Vendor:
                 best_item = item
 
         return best_item
-
 
     def swap_best_by_category(self, other_vendor, my_priority, their_priority):
         
@@ -80,8 +78,3 @@ class Vendor:
         other_vendor.inventory.append(my_best_item)
 
         return True
-
-
-
-
-
