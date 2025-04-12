@@ -6,9 +6,6 @@ class Decor(Item):
         self.width = width
         self.length = length
         self.condition = condition
-    
-    def get_category(self):
-        return self.__class__.__name__
 
     def __str__(self):
         return f"An object of type {self.__class__.__name__} with id {self.id}. It takes up a {self.width} by {self.length} sized space."
