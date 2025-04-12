@@ -34,6 +34,7 @@ def test_get_no_matching_items_by_category():
     items = vendor.get_by_category("Electronics")
 
     assert items == []
+    assert vendor.inventory == [item_a, item_b, item_c]
 
 # @pytest.mark.skip
 def test_best_by_category():
