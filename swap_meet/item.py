@@ -21,6 +21,6 @@ class Item:
         4 : "gently used",
         5 : "like new"
         }
-        if self.condition < 0 or self.condition > 5:
-            return "unknown condition"
-        return descriptions[self.condition]
+        # if self.condition < 0 or self.condition > 5:
+        #     return "unknown condition"
+        return descriptions.get(self.condition, "unknown condition")
