@@ -11,21 +11,18 @@ class Vendor:
         self.inventory.append(item)
         return item
 
-    def remove(self, item): # this updated dry code creates an error in test wave 1
+    def remove(self, item):
         if item in self.inventory:
             new_inventory = []
 
             for piece in self.inventory:
                 if piece != item:
                     new_inventory.append(piece)
-
-            if len(new_inventory) == len(self.inventory):
-                return False
             
             self.inventory = new_inventory
-            #self.inventory.remove(item)
+
             return item
-        #return False
+        return False
     
     def get_by_id(self, item_id):
         for item in self.inventory:
@@ -77,18 +74,16 @@ class Vendor:
         return [item for item in self.inventory if item.get_category() == category] 
 
     def get_best_by_category(self, category=""):
+        category_items = self.get_by_category(category)
+        
         best_item = None
         best_condition = -1
         
-        for item in self.inventory:
-            if item.get_category() == category and item.condition > best_condition:
-                best_condition = item.condition
-                best_item = item     # there was a suggestion for this block of code but it kept popping up errors and so I changed it back to our original
-                                        # hoping to maybe discuss it together so we can see how to dry this up
-        '''category_items = self.get_by_category()
-        
         for item in category_items:
-            if item.condition > best_condition:    this was the suggested code'''
+            if item.condition > best_condition:
+                best_condition = item.condition
+                best_item = item
+                
         return best_item
     
     def swap_best_by_category(self, other_vendor, my_priority, their_priority):

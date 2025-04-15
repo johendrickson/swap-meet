@@ -50,9 +50,3 @@ def test_removing_not_found_is_false():
     result = vendor.remove(item)
 
     assert result == False, f"No item in inventory expected to be False, but got {result}"
-    
-    # #JAMIE CODE
-    # #-----------
-    # assert item not in vendor.inventory
-    # assert result is False
-
